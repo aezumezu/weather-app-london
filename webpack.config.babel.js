@@ -42,14 +42,14 @@ module.exports = {
 			{
 				test: /\.jsx?$/,
 				exclude: path.resolve(__dirname, 'src'),
-				loader: 'source-map'
+				loader: 'source-map-loader'
 			}
 		],
 		loaders: [
 			{
 				test: /\.jsx?$/,
 				exclude: /node_modules/,
-				loader: 'babel'
+				loader: 'babel-loader'
 			},
 			{
 				// Transform our own .(less|css) files with PostCSS and CSS-modules
@@ -72,11 +72,11 @@ module.exports = {
 			},
 			{
 				test: /\.json$/,
-				loader: 'json'
+				loader: 'json-loader'
 			},
 			{
 				test: /\.(xml|html|txt|md)$/,
-				loader: 'raw'
+				loader: 'raw-loader'
 			},
 			{
 				test: /\.(svg|woff2?|ttf|eot|jpe?g|png|gif)(\?.*)?$/i,

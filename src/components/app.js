@@ -30,7 +30,7 @@ export default class App extends Component {
 			return (
 				<div id="app">
 					<Ipad/ >
-				</div>   				
+				</div>
 			);
 		} 
 		else {
