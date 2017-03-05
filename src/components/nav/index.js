@@ -6,30 +6,30 @@ import { backgroundData } from '../../lib/helperData';
 
 // build the nav component
 export default class Nav extends Component {
-	constructor() {
-		super();
-		this.changeCity = this.changeCity.bind(this);
-	}
+  constructor() {
+    super();
+    this.changeCity = this.changeCity.bind(this);
+  }
 
-	changeCity(e) {
-		const city = e.target.value.toLowerCase();
-		this.props.getCondition(backgroundData[city].place);
-	}
+  changeCity(e) {
+    const city = e.target.value.toLowerCase();
+    this.props.getCondition(backgroundData[city].place);
+  }
 
-	render() {
-		const imgPath = '../../assets/backgrounds/';
-		return (
-				<div class={style.city_buttons}>
-					<select onChange={this.changeCity}>
-						<option selected disabled hidden>Select City</option>
-						<option value="big ben">Big Ben</option>
-						<option value="buckingham">Buckingham Palace</option>
-						<option value="greenwich">Greenwich</option>
-						<option value="st pauls">St. Pauls</option>
-						<option value="shards">Shards</option>
-						<option value="tower bridge">Tower Bridge</option>
-					</select>
-				</div>
-		);
-	}
+  render() {
+    const imgPath = '../../assets/backgrounds/';
+    return (
+      <div class={style.city_buttons}>
+        <select onChange={this.changeCity}>
+          <option selected disabled hidden>Select City</option>
+          <option value="big ben">Big Ben</option>
+          <option value="buckingham">Buckingham Palace</option>
+          <option value="greenwich">Greenwich</option>
+          <option value="st pauls">St. Pauls</option>
+          <option value="shards">Shards</option>
+          <option value="tower bridge">Tower Bridge</option>
+        </select>
+      </div>
+    );
+  }
 }
