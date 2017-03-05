@@ -2,46 +2,34 @@
 import { h, render, Component } from 'preact';
 // import the button component
 import style from './style';
+import { backgroundData } from '../../lib/helperData';
 
 // build the nav component
 export default class Nav extends Component {
 	constructor() {
 		super();
-		this.handleBackgroundChange = this.handleBackgroundChange.bind(this);
+		this.changeCity = this.changeCity.bind(this);
 	}
 
-	handleBackgroundChange(bg_image) {
-		// debugger;
-		const container = '.' + this.props.style;
-		const elem = document.querySelector(container);
-		const elemClasses = elem.classList.toString().split(' ');
-		elemClasses.length > 1 ? elem.classList.remove(elemClasses[1]): '';
-		;
-		elem.classList.add(bg_image);
-		// elem.style.backgoundImage = `url(${bg_image})`;
-		console.log('the elem', elem.classList.toString());
+	changeCity(e) {
+		const city = e.target.value.toLowerCase();
+		this.props.getCondition(backgroundData[city].place);
 	}
 
 	render() {
 		const imgPath = '../../assets/backgrounds/';
 		return (
-			<div>
-				<div class={`${style.button} ${style.big_ben}`}
-					onClick={this.handleBackgroundChange.bind(null, style.big_ben)} >
+				<div class={style.city_buttons}>
+					<select onChange={this.changeCity}>
+						<option selected disabled hidden>Select City</option>
+						<option value="big ben">Big Ben</option>
+						<option value="buckingham">Buckingham Palace</option>
+						<option value="greenwich">Greenwich</option>
+						<option value="st pauls">St. Pauls</option>
+						<option value="shards">Shards</option>
+						<option value="tower bridge">Tower Bridge</option>
+					</select>
 				</div>
-				<div class={`${style.button} ${style.london_skyline}`}
-					onClick={this.handleBackgroundChange.bind(null, style.london_skyline)} >
-				</div>
-				<div class={`${style.button} ${style.canary_wharf}`}
-					onClick={this.handleBackgroundChange.bind(null, style.canary_wharf)} >
-				</div>
-				<div class={`${style.button} ${style.shards}`}
-					onClick={this.handleBackgroundChange.bind(null, style.shards)} >
-				</div>
-				<div class={`${style.button} ${style.tower_bridge}`}
-					onClick={this.handleBackgroundChange.bind(null, style.tower_bridge)} >
-				</div>
-			</div>
 		);
 	}
 }

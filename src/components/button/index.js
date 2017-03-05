@@ -12,7 +12,7 @@ export default class Button extends Component {
 		}
 		return (
 			<div>
-				<button onClick={this.props.clickFunction}>
+				<button onClick={this.props.clickFunction.bind(null, 'London')}>
 					{this.props.text}
 				</button>
 			</div>

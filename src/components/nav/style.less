@@ -1,31 +1,75 @@
 @import '~style/helpers';
 
-.button {
-  width: 18%;
-  height: 30px;
-  margin: 2px;
-  cursor: pointer;
+.city_buttons {
+  padding: 5px;
+  float: right;
+}
+
+.temp_toggle {
+  float: left;
+  padding: 10px;
+  margin-top: 170px;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
   display: inline-block;
+  width: 60px;
+  height: 34px;
+  vertical-align: middle;
+  margin: 0px 5px;
 }
 
-.big_ben {
-	background-image: url('../../assets/backgrounds/big_ben.jpg');
-  background-size: cover;
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2196F3;
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
-.london_skyline {
-	background-image: url('../../assets/backgrounds/london_skyline.jpg');
-  background-size: cover;
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
 }
-.shards {
-	background-image: url('../../assets/backgrounds/shards.jpg');
-  background-size: cover;
+
+input:checked + .slider {
+  background-color: #2196F3;
 }
-.canary_wharf {
-	background-image: url('../../assets/backgrounds/canary_wharf.jpg');
-  background-size: cover;
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #ccc;
 }
-.tower_bridge {
-	background-image: url('../../assets/backgrounds/tower_bridge.jpg');
-  background-size: cover;
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
 }
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
