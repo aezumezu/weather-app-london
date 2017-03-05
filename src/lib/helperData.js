@@ -8,19 +8,23 @@ export const locations = {
     "url": "http://api.wunderground.com/api/56e8a29514044fcf/forecast/q/Uk/Buckingham.json"
   },
   "St. Pauls": {
-    "url": "" //url for shards, st pauls and tower bridge are not available at the moment
+    "url": "http://api.wunderground.com/api/2cf6aee65910be39/forecast/q/UK/City%20of%20London.json"
+    //url for shards, st pauls and tower bridge are not available at the moment
   },
   "Tower Bridge": {
-    "url": "" //url for shards, st pauls and tower bridge are not available at the moment
+    "url": "http://api.wunderground.com/api/2cf6aee65910be39/forecast/q/UK/Bermondsey.json"
+    //url for shards, st pauls and tower bridge are not available at the moment
   },
   "Shards": {
-    "url": "" //url for shards, st pauls and tower bridge are not available at the moment
+    "url": "http://api.wunderground.com/api/2cf6aee65910be39/forecast/q/UK/Minchinhampton.json"
+    //url for shards, st pauls and tower bridge are not available at the moment
   },
   "Greenwich": {
     "url": "http://api.wunderground.com/api/56e8a29514044fcf/forecast/q/Uk/Greenwich.json"
   },
   "Big Ben": {
-    "url": "http://api.wunderground.com/api/56e8a29514044fcf/forecast/q/Uk/London.json"
+    "url": "http://api.wunderground.com/api/2cf6aee65910be39/forecast/q/UK/Puddle%20Dock.json"
+    //url for shards, st pauls and tower bridge are not available at the moment
   }
 };
 

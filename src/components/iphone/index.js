@@ -92,8 +92,7 @@ export default class Iphone extends Component {
       <div class={style.main}>
         <div class={style.city}>{weather.city}</div>
         <div class={style.conditions}>{weather[tempType].avg}&deg;C</div>
-        <div class={style.conditions}>{weather[tempType].low}&deg;C</div>
-        <div class={style.conditions}>{weather[tempType].high}&deg;C</div>
+        <div class={style.small}>{weather[tempType].low}&deg;C {weather[tempType].high}&deg;C</div>
       </div>
     );
   }
@@ -146,21 +145,24 @@ export default class Iphone extends Component {
           :
           <div>
             <Nav style={style.container} getCondition={this.fetchWeatherData} />
-            {this.renderMainWeather()}
+            <div>{this.renderMainWeather()}</div>
             <div class={style.lower}>
               <div class={style.toggle} onClick={this.toggleDetails.bind(null, "hideDetails")}>Toggle</div>
               <div class="hideDetails">
-                <div class={style.temp_toggle}>
-                  &deg;C
-									<label class={style.switch}>
+                <div class={style.temp_toggle}>&deg;C
+                  <label class={style.switch}>
                     <input type="checkbox" />
                     <div onClick={this.handleTempUnitChange} class={`${style.slider} ${style.round}`}></div>
-                  </label>
-                  &deg;F
-								</div>
+                  </label>&deg;F
+                </div>
                 <div class={style.details}>
                   {this.renderCityWeather()}
-                  <div class={style.recommendation}>{recommendations[this.state.City[0].cond]}</div>
+                  <div class={style.recommendation}>
+                    {recommendations[this.state.City[0].cond]}
+                    <div class={style.clothings}>
+                      <img src="../../assets/wears/dress.png" alt="a dress" />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
