@@ -18,9 +18,16 @@ export default function WeatherFormat(forecasts, location) {
     data.temp_f.low = forecast.low.fahrenheit;
     data.temp_f.high = forecast.high.fahrenheit;
     data.cond = forecast.conditions;
-    data.icon_url = forecast.icon_url;
+    data.icon_url = getHttps(forecast.icon_url);
     data.humidity = forecast.avehumidity;
     data.city = location;
     return data;
   });
+}
+
+function getHttps(url) {
+  if (url.split(':')[0] === 'http') {
+    return `https${url.substr(4)}`;
+  }
+  return url;
 }
